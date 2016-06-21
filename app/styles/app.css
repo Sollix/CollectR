@@ -1,0 +1,28 @@
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+header {
+	height: 75px;
+	background-color: black;
+	color: white;
+}
+
+header h1 {
+	display: inline-block;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+
+#import {
+	background-color: navy;
+	color: white;
+	padding: 15px 10px;
+	margin: 10px 50px 0 0;
+	display: inline-block;
+	float: right;
+	text-decoration: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
