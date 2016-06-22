@@ -1,0 +1,26 @@
+    <form class="newRelease">
+    	{{textarea name='artist' placeholder='Artist' value=artistText}}
+    	{{textarea name='title' placeholder='Title' value=titleText}}
+    	{{textarea name='label' placeholder='Label' value=labelText}}
+    	{{textarea name='year' placeholder='Year' value=year}}
+    	{{textarea name='format' placeholder='Format' value=formatText}}
+    	{{textarea name='thumb' placeholder='Album Art URL' value=thumbURL}}
+    	<button type="submit" {{action 'submitRelease'}}>
+    		Add
+    	</button>
+    </form>
+    <div class="container">
+    	<ul id="messages">
+    		{{#each model as |release|}}
+    		<li class='release'>
+    			<img src="{{release.thumb}}" alt="" height="150" width="150" />
+    			{{release.artist}}
+    			{{release.title}}
+    			{{release.label}}
+    			{{release.year}}
+    			{{release.format}}
+    			<p class="delete" {{action 'deleteRelease' release}}>Delete</p>
+    		</li>
+    		{{/each}}
+    	</ul>
+    </div>
