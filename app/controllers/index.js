@@ -31,16 +31,19 @@ actions: {
 		},
 
 		importCollection() {
-      		this.get('ajax').request('https://api.discogs.com/users/sollix/collection/folders/0/releases?page=1&per_page=10').then(function(response) {
+      		this.get('ajax').request('https://api.discogs.com/users/sollix/collection/folders/0/releases?page=1&per_page=10').then((response) => { //arrow functions allow for "this not to change within a function"
       			debugger
-      			var collection = []
       			for (var i = 0; i < response.releases.length - 1; i++) {
-					collection.push({
-						artist: response.releases[i].basic_information.artists[0].name
+					var addRecord = this.store.createRecord('release', {
+						artist: response.releases[i].basic_information.artists[0].name,
+						title: response.releases[i].basic_information.title,
+						label: response.releases[i].basic_information.labels[0].name,
+						year: response.releases[i].basic_information.year,
+						format: response.releases[i].basic_information.formats[0].name,
+						thumb: response.releases[i].basic_information.thumb
 					})
-					// addRecord.save()
+					addRecord.save()
 				}
-			console.log(collection)
       		})
         }
     }
