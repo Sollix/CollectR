@@ -3,10 +3,19 @@ html, body {
 	margin: 0;
 }
 
+body {
+	background: url(https://upload.wikimedia.org/wikipedia/commons/1/14/2nd_Hand_Record_Store,_Flensburg,_2012,_ubt.JPG);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
 header {
 	height: 75px;
 	background-color: black;
 	color: white;
+	width: 100%;
+	position: fixed;
 }
 
 header h1 {
@@ -17,6 +26,22 @@ header h1 {
 
 ul {
 	padding: 0;
+	overflow: scroll;
+}
+
+.newRelease {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.newRelease textarea {
+	width: 45%;
+}
+
+.newRelease button {
+	display: block;
+	margin: 0 auto;
+	padding: 10px 20px;
 }
 
 #import {
@@ -31,19 +56,15 @@ ul {
 	cursor: pointer;
 }
 
-.container {/*
-	margin: 0px 30px;*/
-	background-color: red;
-}
-
-.newRelease {
-	/*display: none;*/
+.container {
+	overflow: scroll;
 }
 
 .release {
-	width: 90%;
+	width: 80%;
 	margin: 20px auto;
 	list-style: none;
 	border: 1px solid black;
 	text-align: center;
+	background: rgba(249, 249, 249, 0.8);
 }

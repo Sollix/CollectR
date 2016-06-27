@@ -40,7 +40,7 @@ actions: {
 						label: response.releases[i].basic_information.labels[0].name,
 						year: response.releases[i].basic_information.year,
 						format: response.releases[i].basic_information.formats[0].name,
-						thumb: response.releases[i].basic_information.thumb
+						thumb: 'http://www.thebeatles.com/monovinyl/images/site/record.png'
 					})
 					addRecord.save()
 				}
