@@ -8,5 +8,5 @@ export default Model.extend({
 	label: attr('string'),
 	thumb: attr('string'),
 	title: attr('string'),
-	year: attr('string')
+	year: attr('number')
 });

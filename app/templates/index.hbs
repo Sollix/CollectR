@@ -2,6 +2,8 @@
       <h1>CollectR</h1>
       <p id="import" {{action 'importCollection'}}>Import from Discogs</p>
     </header>
+    <div id="main">
+    <div id="addNew" class="hidden">
     <form class="newRelease">
     	{{textarea name='artist' placeholder='Artist' value=artistText}}
     	{{textarea name='title' placeholder='Title' value=titleText}}
@@ -12,19 +14,27 @@
     	<button type="submit" {{action 'submitRelease'}}>
     		Add
     	</button>
+    	<button type="cancel" {{action 'cancelCreate'}}>
+    		Cancel
+    	</button>
     </form>
+    </div>
     <div class="container">
-    	<ul id="messages">
+    	<ul id="collection">
     		{{#each model as |release|}}
     		<li class='release'>
-    			<img src="{{release.thumb}}" alt="" height="150" width="150" />
-    			{{release.artist}}
-    			{{release.title}}
-    			{{release.label}}
-    			{{release.year}}
-    			{{release.format}}
-    			<p class="delete" {{action 'deleteRelease' release}}>Delete</p>
+    			<img src="{{release.thumb}}" alt="" height="200px" width="200px" />
+    			<div class="info">
+    				<h2>{{release.artist}}</h2>
+    				<h3>{{release.title}}</h3>
+    				<p>{{release.label}} / {{release.year}} / {{release.format}}</p>
+    			</div>
+    			<div class="delete" {{action 'deleteRelease' release}}>Delete</div>
     		</li>
     		{{/each}}
     	</ul>
+    </div>
+    <button class="addRelease" {{action 'createNewRelease'}}>
+    	Add
+    </button>
     </div>

@@ -15,7 +15,6 @@ header {
 	background-color: black;
 	color: white;
 	width: 100%;
-	position: fixed;
 }
 
 header h1 {
@@ -30,23 +29,32 @@ ul {
 }
 
 .newRelease {
-	width: 50%;
-	margin: 0 auto;
+	width: 100%;
+	margin-top: 40px;
 }
 
 .newRelease textarea {
-	width: 45%;
+	width: 75%;
+	margin-left: 12.5%;
+	margin-bottom: 1%;
 }
 
 .newRelease button {
 	display: block;
+	background-color: navy;
+	color: #eee;
+	border: 1px solid #eee;
+	border-radius: 5px;
+	padding: 15px 10px;
 	margin: 0 auto;
 	padding: 10px 20px;
+	margin-bottom: 5px;
+
 }
 
 #import {
 	background-color: navy;
-	color: white;
+	color: #eee;
 	padding: 15px 10px;
 	margin: 10px 50px 0 0;
 	display: inline-block;
@@ -61,10 +69,67 @@ ul {
 }
 
 .release {
-	width: 80%;
+	width: 75%;
+	height: 250px;
 	margin: 20px auto;
 	list-style: none;
-	border: 1px solid black;
+	border: 1px solid #000;
 	text-align: center;
 	background: rgba(249, 249, 249, 0.8);
+}
+
+.addRelease {
+	width: 50px;
+	height: 50px;
+	font-size: 10px;
+	color: #eee;
+	border-radius: 50%;
+	border: 3px solid #eee;
+	background: navy;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	cursor: pointer;
+}
+
+.release img {
+	float: left;
+	margin: 25px 0px 25px 50px;
+}
+
+.release .info {
+	width: 100%;
+}
+
+.release .info h2 {
+	font-size: 40px;
+	margin-bottom: 5px;
+}
+
+.release .info h3 {
+	font-size: 20px;
+}
+
+.delete {
+	cursor: pointer;
+	color: #eee;
+	background-color: red;
+	padding: 10px 0;
+	display: inline-block;
+	width: 8%;
+	border: 2px #eee;
+	border-radius: 2px;
+}
+
+#addNew {
+	width: 50%;
+	height: 400px;
+	position: fixed;
+	left: 25%;
+	top: 200px;
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.hidden {
+	display: none;
 }
