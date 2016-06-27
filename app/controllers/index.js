@@ -1,8 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-ajax: Ember.inject.service(),
-actions: {
+	ajax: Ember.inject.service(),
+	actions: {
 
 		createNewRelease() {
 			$('#addNew').removeClass('hidden')
@@ -45,26 +45,29 @@ actions: {
 
 		updateThumb(release) {
 			var newURL = prompt("Please input the URL of the album cover")
-			var updateThumb = release.set('thumb', newURL)
-			release.save()
+			if (newURL === null || newURL == '') {
+				return;
+			} else {
+				release.set('thumb', newURL)
+				release.save()
+			}
 		},
 
 		importCollection() {
 			var username = prompt("What is your Discogs username?")
       		this.get('ajax').request('https://api.discogs.com/users/' + username + '/collection/folders/0/releases?page=1&per_page=10').then((response) => { //arrow functions allow for "this not to change within a function"
-      			debugger
       			for (var i = 0; i < response.releases.length - 1; i++) {
-					var addRecord = this.store.createRecord('release', {
-						artist: response.releases[i].basic_information.artists[0].name,
-						title: response.releases[i].basic_information.title,
-						label: response.releases[i].basic_information.labels[0].name,
-						year: response.releases[i].basic_information.year,
-						format: response.releases[i].basic_information.formats[0].name,
-						thumb: '/images/record.png'
+      				var addRecord = this.store.createRecord('release', {
+      					artist: response.releases[i].basic_information.artists[0].name,
+      					title: response.releases[i].basic_information.title,
+      					label: response.releases[i].basic_information.labels[0].name,
+      					year: response.releases[i].basic_information.year,
+      					format: response.releases[i].basic_information.formats[0].name,
+						thumb: '/images/record.png' //discogs depricated allowing images, especially en masse
 					})
-					addRecord.save()
-				}
+      				addRecord.save()
+      			}
       		})
-        }
-    }
-});
+      	}
+      }
+  });
