@@ -63,7 +63,7 @@ export default Ember.Controller.extend({
       					label: response.releases[i].basic_information.labels[0].name,
       					year: response.releases[i].basic_information.year,
       					format: response.releases[i].basic_information.formats[0].name,
-						thumb: '/images/record.png' //discogs depricated allowing images, especially en masse
+						thumb: 'https://pixabay.com/static/uploads/photo/2013/07/13/12/07/record-159211_960_720.png' //discogs depricated allowing images, especially en masse
 					})
       				addRecord.save()
       			}
