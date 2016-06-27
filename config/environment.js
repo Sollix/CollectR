@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'discogs-clone',
     environment: environment,
-    baseURL: '/',
+    baseURL: '/dist/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
