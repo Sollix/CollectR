@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-	background: url(https://upload.wikimedia.org/wikipedia/commons/1/14/2nd_Hand_Record_Store,_Flensburg,_2012,_ubt.JPG);
+	background: url(/images/recordstore.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -21,7 +21,7 @@ header {
 header h1 {
 	display: inline-block;
 	margin-left: 50px;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 ul {

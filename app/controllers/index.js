@@ -45,7 +45,7 @@ export default Ember.Controller.extend({
 
 		updateThumb(release) {
 			var newURL = prompt("Please input the URL of the album cover")
-			if (newURL === null || newURL == '') {
+			if (newURL === null || newURL === '') {
 				return;
 			} else {
 				release.set('thumb', newURL)
@@ -55,7 +55,7 @@ export default Ember.Controller.extend({
 
 		importCollection() {
 			var username = prompt("What is your Discogs username?")
-      		this.get('ajax').request('https://api.discogs.com/users/' + username + '/collection/folders/0/releases?page=1&per_page=10').then((response) => { //arrow functions allow for "this not to change within a function"
+      		this.get('ajax').request('https://api.discogs.com/users/' + username + '/collection/folders/0/releases?page=1&per_page=20').then((response) => { //arrow functions allow for "this not to change within a function"
       			for (var i = 0; i < response.releases.length - 1; i++) {
       				var addRecord = this.store.createRecord('release', {
       					artist: response.releases[i].basic_information.artists[0].name,
