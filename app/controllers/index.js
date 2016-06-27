@@ -43,6 +43,12 @@ actions: {
 			release.destroyRecord()
 		},
 
+		updateThumb(release) {
+			var newURL = prompt("Please input the URL of the album cover")
+			var updateThumb = release.set('thumb', newURL)
+			release.save()
+		},
+
 		importCollection() {
 			var username = prompt("What is your Discogs username?")
       		this.get('ajax').request('https://api.discogs.com/users/' + username + '/collection/folders/0/releases?page=1&per_page=10').then((response) => { //arrow functions allow for "this not to change within a function"
